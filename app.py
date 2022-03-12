@@ -179,7 +179,26 @@ def main():
                      a combination of diet, physical activity and, if necessary, medication; control of blood pressure and lipids to reduce cardiovascular risk and other complications; 
                      and regular screening for damage to the eyes, kidneys and feet, to facilitate early treatment. 
                      """)
-        
+                     
+        with st.expander("How accurate and predictable of this machine learning algorithm (i.e. Adaboost Classifier) to predict a person's with diabetes or non-diabetes? "):
+            st.subheader("**Classification Report** ")
+            st.write("""
+                     Classification Report was used to evaluate and measure the quality of the predictions from the Adaboost algorithm. The following classification reports are for both training and testing sets. 
+                     """)
+            st.write("**Classification Report (Training Set)**")
+            st.image("images/training_report.jpg")
+            st.write("**Classification Report (Testing Set)**")
+            st.image("images/testing_report.jpg")
+            st.write("**Remarks:** Both classification reports have shown that this Adaboost classifier works exceptionally well in predicting a person with either diabetes or non-diabetes.")
+            
+            st.subheader("**Receiver Operating Characteristic (ROC) curve** ")
+            st.write("""
+                     ROC curve was also used to summarizes the performance of a binary classification model on the positive class (i.e. diabetes). The x-axis represents the False Positive Rate and the y-axis represents the True Positive Rate. 
+                     """)
+            st.image("images/training_roc.png")
+            st.image("images/testing_roc.png")
+            st.write("**Remarks:** Both ROC curves have shown that the Adaboost classifier has the capability to differentiate between diabetes and non-diabetes since the roc-score for Adaboost classifier is above 50% of the no skill algorithm. ")
+            
         with st.expander("What is body mass index (BMI)? "):
             st.image("images/bmi.jpg")
             st.write("""
